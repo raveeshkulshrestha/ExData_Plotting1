@@ -18,13 +18,13 @@ validrangedf <- subset(pwdf, as.Date(pwdf$Date, format = "%d/%m/%Y") >= "2007-02
 ##range(weekdays(as.Date(validrangedf$Date, format = "%d/%m/%Y")))
 
 ## Y axis is Global Active Power
-## X axis is time series for which we need to combine data and time together
+## X axis is time series for which we need to combine date and time columns together
 
-## Creata a new column datetime for x axis
+## Creata a new column datetime for x axis by combining date and time columns
 validrangedf$DateTime <- paste(as.Date(validrangedf$Date, format = "%d/%m/%Y"), 
                                validrangedf$Time) 
 
-## plot the graph
+## plot the graph using type="S"
 plot(strptime(validrangedf$DateTime, format = '%Y-%m-%d %H:%M:%S'), 
      validrangedf$Global_active_power, type = "S",ylab = "Global Active Power (kilowatts)", xlab="")
 ##with(validrangedf, plot(strptime(validrangedf$DateTime, format = '%Y-%m-%d %H:%M:%S'), Global_active_power))
