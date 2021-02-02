@@ -20,5 +20,5 @@ validrangedf <- subset(pwdf, as.Date(pwdf$Date, format = "%d/%m/%Y") >= "2007-02
 hist(as.numeric(validrangedf$Global_active_power), col = "Red", 
      xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 
-dev.copy(png, file="plot1.png")
+dev.copy(png, file="plot1.png", width = 480, height = 480,units = "px")
 dev.off()
